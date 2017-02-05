@@ -184,7 +184,7 @@ class TerminalPopupMenu(object):
         item.connect('toggled', lambda x: terminal.do_scrollbar_toggle())
         menu.append(item)
 
-        item = gtk.CheckMenuItem(_('Toggle tab visibility'))
+        item = Gtk.CheckMenuItem(_('Toggle tab visibility'))
         item.set_active(terminal.scrollbar.get_property('visible'))
         item.connect('toggled', self.toggle_tab_visibility)
         menu.append(item)
