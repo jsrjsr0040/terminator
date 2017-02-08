@@ -437,7 +437,8 @@ class PrefsEditor:
         guiget = self.builder.get_object
         widget = guiget('entryfilter')
         filter_text = widget.get_text()
-        check = lambda col: col != None and bool(re.match(r'.*('+filter_text+r')', str(col), re.I))
+        clean_text = lambda value: re.sub(r' +', ' ', re.sub(r'[+-]', ' ', value.strip()))
+        check = lambda col: col != None and bool(re.match(r'.*'+re.escape(clean_text(filter_text)), str(clean_text(col)), re.I))
         accel = Gtk.accelerator_get_label(key, mods)
         return check(col1) or check(col2) or check(accel)
 
