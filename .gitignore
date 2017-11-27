@@ -5,3 +5,7 @@ terminatorlib/*.pyc
 terminatorlib/meliae
 _trial_temp
 terminatorc
+build/
+data/terminator.appdata.xml
+data/terminator.desktop
+po/.intltool-merge-cache
